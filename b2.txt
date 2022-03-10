@@ -1,0 +1,22 @@
+int find(int a[],int x,int left,int right)
+{
+	int m1,m2,result;
+	result=0;
+	{
+		while(left<=right && result ==0)
+			{	
+				m1=left+(right-left)/3;
+				m2=right-(right-left)/3;
+			if(x==a[m1] result=m1;
+			if(x==a[m2] result=m2;
+if (x<a[m1] right=m1-1;
+else if (x>a[m2] left=m2+1;
+else
+	{ 
+	left=m1+1; right=m2-1;
+	}
+			}
+	}
+	return result;
+}
+		
