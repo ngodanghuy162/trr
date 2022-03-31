@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string.h>
+#include <vector>
+
+using namespace std;
+void print(int n, int i, int j,string s, vector <string> &ans ){
+	if (i==n && j==n){
+		ans.push_back(s);
+		return;
+	}
+	if(i<n){
+		print(n,i+1,j,s+"(",ans);
+	}
+	if(j<i){
+		print(n,i,j+1,s+")",ans);
+	}
+}
+int main()
+{
+	int n;
+	cin>>n;
+	n=n/2;
+	vector<string>ans;
+	for (int i=2;i<=n;i++){
+		print (i,0,0,"",ans);
+	}
+	for (auto&x:ans){
+		cout<<x<<'\n';
+	}
+	return 0;
+}
